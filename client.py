@@ -52,7 +52,7 @@ class Resume:
     def send_to_parser_dir(self) -> None:
         """Moves file from original location (cs-senior-project/input/) to resume parser directory"""
         logging.info(f"original file location: {self.file_location}")
-        if  os.path.exists(os.path.join(RESUME_INPUT_DIR, self.file_name)):
+        if os.path.exists(os.path.join(RESUME_INPUT_DIR, self.file_name)):
             timestamp = datetime.now().strftime("%Y%m%d%H%M%S")
             new_destination = os.path.join(RESUME_INPUT_DIR, f"{self.file_name}_{timestamp}.pdf")
             self.file_name = f"{self.file_name}_{timestamp}.pdf"
